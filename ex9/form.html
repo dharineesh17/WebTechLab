@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Child blood type calculator</title>
+    </head>
+        <script>
+            function same_type(allele1,allele2)
+            {
+                const possible_alleles_A  = new Array('AO','AA');
+                const possible_alleles_AB = new Array('AB');
+                const possible_alleles_B  = new Array('BO','BB');
+                const possible_alleles_O  = new Array('OO');
+
+                if (allele1 == 'A')
+                {
+                    var AA = 0;
+                    var AO = 0;
+                    var OO = 0;
+
+                    for(i=0;i < possible_alleles_A.length;i++)
+                    {
+                        for (j=0;j<=i;j++)
+                        {
+                            var possible_alleles_A_f_A__ = possible_alleles_A[i][j];
+                            var possible_alleles_A_f_O__ = possible_alleles_A[i][j+1];
+                            var possible_alleles_A_f_A_1 = possible_alleles_A[i+1][j];
+                            var possible_alleles_A_f_A_2 = possible_alleles_A[i+1][j+1];
+
+                            var possible_alleles_A_m_A__ = possible_alleles_A[i][j];
+                            var possible_alleles_A_m_O__ = possible_alleles_A[i][j+1];
+                            var possible_alleles_A_m_A_1 = possible_alleles_A[i+1][j];
+                            var possible_alleles_A_m_A_2 = possible_alleles_A[i+1][j+1];
+
+                            if (possible_alleles_A_f_A__ == possible_alleles_A_m_A__)
+                            {
+                                AA = AA + 1;
+                            }
+                            
+                            if (possible_alleles_A_f_A__ == )
+
+
+                        }
+                    }
+
+
+                }
+                
+            }
+
+            function calculate_blood_type()
+            {
+                var mother_type = document.getElementById("mother").value;
+                var father_type = document.getElementById("father").value;
+               
+                
+                
+              
+                if (mother_type == 'A' && father_type == 'A')
+                {
+                    same_type('A','A');
+                }
+
+
+                
+            }
+        </script>
+    <body>
+        <table border="1" align="center">
+            <tr><th></th><th>Child Blood type calculator</th></tr>
+            <tr><th align="right">Mother Blood type:</th>
+                <th align="left">
+                    <select name="mother" id="mother">
+                        <option value="A" >A</option>
+                        <option value="B" >B</option>
+                        <option value="O" >O</option>
+                        <option value="AB">AB</option>
+                    </select>
+                </th>
+            </tr>
+            <tr><th align="right">Father Blood type:</th>
+                <th align="left">
+                    <select name="father" id="father">
+                        <option value="A">A</option>
+                        <option value="B">B</option>
+                        <option value="O">O</option>
+                        <option value="AB">AB</option>
+                    </select>
+                </th>  
+            </tr>
+            <tr><th align="right">Type A Chance:</th><th align="left"><input type="text"  id="A"></th></tr>
+            <tr><th align="right">Type B Chance:</th><th align="left"><input type="text"  id="B"></th></tr>
+            <tr><th align="right">Type O Chance:</th><th align="left"><input type="text"  id="O"></th></tr>
+            <tr><th align="right">Type AB Chance:</th><th align="left"><input type="text" id="AB"></th></tr>
+            <tr><th></th>
+                <th>
+                    <input type="button" value="calculate" onclick="calculate_blood_type()">
+                    <input type="reset" value="Reset all" >
+                </th>
+            </tr>
+
+        </table>
+       
+    </body>
+
+</html>

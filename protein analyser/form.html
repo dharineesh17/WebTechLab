@@ -1,0 +1,39 @@
+<!--
+    name  : Dharineesh K S
+    regno : 123013012
+-->
+
+<center>
+    <h2>Protein interaction Analyser</h2>
+    <hr>
+</center>
+
+
+<form method="post" action="hydrophobic.php" enctype="multipart/form-data">
+
+        <label><b>Upload sequence file</b></label>
+        <input type="file" name="pseq"> 
+        <br>
+        <font color = red size = 4px>Types of interactions</font>
+        <br>
+        <input type="checkbox" name="c1[]" value="Hydro">
+        Hydrophobic interactions <br>
+        
+            <input type="checkbox" name="c1[]" value="disul">
+            Disulphide bridges <br>
+        
+            <input type="checkbox" name="c1[]" value="ionic">
+            Ionic interactions <br>
+        
+            <input type="checkbox" name="c1[]" value="aroaro">
+            Aromatic-Aromati interactions <br>
+        
+            <input type="checkbox" name="c1[]" value="arosul">
+            Aromati-Sulphur interactions <br>
+        
+            <input type="checkbox" name="c1[]" value="catpi">
+            Cation-PI interactions <br>
+        
+            <input type="submit" value="upload"> 
+</form>
+<center><h2>Copyrights &copy; Department of Bioinformatics</h2></center>

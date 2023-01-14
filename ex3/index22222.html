@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<head>
+    <style>
+        .tb{
+            
+            background-color: burlywood;
+        }
+        body{
+            background-color: rgba(8, 10, 146, 0.959);
+            margin-top: 9%;
+            margin-bottom: 9%;
+        }
+        td{
+            background-color: cornflowerblue;
+        }
+        
+        
+    </style>
+</head>
+<body>
+    <div>
+<form method="POST" action="loginverify.php">
+        <table border=1 align="center"  class="tb">
+            <tr>
+                <td align="center">
+                    <br>
+                    <br>
+                    <br>
+                    <center>
+                        <img src="https://webstream.sastra.edu/sastrapwi/images/sastra_logo_1.gif" width="70%">
+                    </center>
+                    <br>
+                    <hr>
+                    SASTRA DEEMED UNIVERSITY<br>
+                    Tirumalaisamudram<br>                    
+                    Thanjavur - 613401<br>
+                    Tamilnadu, India 
+                </td>
+                <td align="center">
+                    <h3>eVarsity</h3>
+                    <h3>ERP for education</h3> 
+                    <br>
+                    <hr>
+                    <h3>Enter the user id and password to login</h3>
+                    <br>
+                    <br>
+                    <table>
+                        <tr>
+                            <th align="right">
+                                Your ID:
+                            </th>
+                            <td>
+                                <input type=text name="userid">
+                            </td>
+                        </tr>
+                        <tr>
+                            <th align="right">
+                                Your Password: 
+                            </th>
+                            <td>
+                                <?php ?>
+                            </td>
+                            <td>
+                                <input type=password name="pwd">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2" align="center"><input type=submit value="Log in"></td>
+                        </tr>
+                    </table>     
+                </td>        
+            </tr> 
+        </table>
+    </form>
+    </div>
+</body>
+</html>

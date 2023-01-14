@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Child blood type calculator</title>
+        <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+        <meta content="utf-8" http-equiv="encoding">
+    </head>
+    <!--
+        
+        Author  : Dharineesh K S
+        regno   : 123013012
+    -->
+    <body>
+        <script type="text/javascript" defer>
+            function calculate_blood_type()
+            {
+                var mother_type = document.getElementById("mother").value;
+                var father_type = document.getElementById("father").value;
+
+                if (father_type == "A" && mother_type == "A")
+                {
+                    f_possible = ['AO','AA'];
+                    m_possible = ['AO','AA'];
+                    var AA = 0;
+                    var AO = 0;
+                    var OA = 0;
+                    var OO = 0;
+                    var tot = 0;
+
+                    
+                    for (let f_ch of f_possible)
+                    {
+                        for (let m_ch of m_possible)
+                        {
+                            for (let i = 0;i < 1;i++)
+                            {
+                                if (f_ch[i] == 'A' && m_ch[i] == 'A')
+                                {
+                                    AA = AA + 1;
+                                } // AA
+                                if (f_ch[i] == 'A' && m_ch[i+1] == 'A')
+                                {
+                                    AA = AA + 1;
+                                } // AA
+                                if (f_ch[i+1] == 'A' && m_ch[i] == 'A')
+                                {
+                                    AA = AA + 1;
+                                } // AA
+                                if (f_ch[i+1] == 'A' && m_ch[i+1] == 'A')
+                                {
+                                    AA = AA + 1;
+                                } // AA
+
+
+                                if (f_ch[i] == 'A' && m_ch[i+1] == 'O')
+                                {
+                                    AO = AO + 1;
+                                } // AO
+                                if (f_ch[i+1] == 'A' && m_ch[i+1] == 'O')
+                                {
+                                    AO = AO + 1;
+                                } // AO
+                                if (f_ch[i+1] == 'A' && m_ch[i] == 'O')
+                                {
+                                    AO = AO + 1;
+                                } // AO
+
+
+                                if (f_ch[i+1] == 'O' && m_ch[i+1] == 'A')
+                                {
+                                    OA = OA + 1;
+                                } // OA
+                                if (f_ch[i+1] == 'O' && m_ch[i] == 'A')
+                                {
+                                    OA = OA + 1;
+                                } // OA
+                                if (f_ch[i] == 'O' && m_ch[i+1] == 'A')
+                                {
+                                    OA = OA + 1;
+                                } // OA
+                                
+
+                                if (f_ch[i+1] == 'O' && m_ch[i+1] == 'O')
+                                {
+                                    OO = OO + 1;
+                                } // OO    
+                            } 
+                        }
+                    }
+                    tot = AA + AO + OA + OO;
+                    var A = 0;
+                    var B = 0;
+                    var A_B = 0;
+                    var O = 0;
+                    A = ((AA + AO + OA)/tot)*100;
+                    O = (OO/tot)*100;
+                    document.getElementById("AAAA").innerHTML = A;
+                    document.getElementById("BBBB").innerHTML = B;
+                    document.getElementById("ABAB").innerHTML = A_B;
+                    document.getElementById("OOOO").innerHTML = O;  
+                }
+
+                else if (father_type == "B" && mother_type == "B")
+                {
+                    f_possible = ['BO','BB'];
+                    m_possible = ['BO','BB'];
+                    var BB = 0;
+                    var BO = 0;
+                    var OB = 0;
+                    var OO = 0;
+                    var tot = 0;
+
+    
+                   for (let f_ch of f_possible)
+                   {
+                       for (let m_ch of m_possible)
+                       {
+                           for (let i = 0;i < 1;i++)
+                           {
+                               if (f_ch[i] == 'B' && m_ch[i] == 'B')
+                               {
+                                   BB = BB + 1;
+                               } // BB
+                               if (f_ch[i] == 'B' && m_ch[i+1] == 'B')
+                               {
+                                   BB = BB + 1;
+                               } // BB
+                               if (f_ch[i+1] == 'B' && m_ch[i] == 'B')
+                               {
+                                   BB = BB + 1;
+                               } // BB
+                               if (f_ch[i+1] == 'B' && m_ch[i+1] == 'B')
+                               {
+                                   BB = BB + 1;
+                               } // BB
+                               if (f_ch[i] == 'B' && m_ch[i+1] == 'O')
+                               {
+                                   BO = BO + 1;
+                               } // BO
+                               if (f_ch[i+1] == 'B' && m_ch[i+1] == 'O')
+                               {
+                                   BO = BO + 1;
+                               } // BO
+                               if (f_ch[i+1] == 'B' && m_ch[i] == 'O')
+                               {
+                                   BO = BO + 1;
+                               } // BO
+                               if (f_ch[i+1] == 'O' && m_ch[i+1] == 'B')
+                               {
+                                   OB = OB + 1;
+                               } // OB
+                               if (f_ch[i+1] == 'O' && m_ch[i] == 'B')
+                               {
+                                   OB = OB + 1;
+                               } // OB
+                               if (f_ch[i] == 'O' && m_ch[i+1] == 'B')
+                               {
+                                   OB = OB + 1;
+                               } // OB
+                               if (f_ch[i+1] == 'O' && m_ch[i+1] == 'O')
+                               {
+                                   OO = OO + 1;
+                               } // OO
+                            } 
+                        }
+                    }
+                    tot = BB + BO + OB + OO;
+                    var A = 0;
+                    var B = 0;
+                    var A_B = 0;
+                    var O = 0;
+                    B = ((BB + BO + OB)/tot)*100;
+                    O = (OO/tot)*100;
+                    document.getElementById("AAAA").innerHTML = A;
+                    document.getElementById("BBBB").innerHTML = B;
+                    document.getElementById("ABAB").innerHTML = A_B;
+                    document.getElementById("OOOO").innerHTML = O;
+    
+                }
+                else if (father_type == "AB" && mother_type == "AB")
+                {
+                    f_possible = ['AB'];
+                    m_possible = ['AB'];
+                    var AA  = 0;
+                    var AB  = 0;
+                    var BB  = 0;
+                    var tot = 0;
+   
+                    for (let f_ch of f_possible)
+                    {
+                        for (let m_ch of m_possible)
+                        {
+                            for (let i = 0;i < 1;i++)
+                            {
+                                if (f_ch[i] == 'A' && m_ch[i] == 'A')
+                                {
+                                    AA = AA + 1;
+                                }
+                                if (f_ch[i] == 'A' && m_ch[i+1] == 'B')
+                                {
+                                    AB = AB + 1;
+                                }
+                                if (f_ch[i+1] == 'B' && m_ch[i] == 'A')
+                                {
+                                    AB = AB + 1;
+                                }
+                                if (f_ch[i+1] == 'B' && m_ch[i+1] == 'B')
+                                {
+                                    BB = BB + 1;
+                                }
+                                
+                                
+                            } 
+                        }
+                    }
+
+                    tot = AA + AB + BB;
+                    
+                    var A = 0;
+                    var B = 0;
+                    var A_B = 0;
+                    var O = 0;
+
+                    A = (AA/tot)*100;
+                    B = (BB/tot)*100;
+                    A_B = (AB/tot)*100;
+                    
+
+                    document.getElementById("AAAA").innerHTML = A;
+                    document.getElementById("BBBB").innerHTML = B;
+                    document.getElementById("ABAB").innerHTML = A_B;
+                    document.getElementById("OOOO").innerHTML = O;
+
+                }
+                else if (father_type == "O" && mother_type == "O")
+                {
+                    f_possible = ['OO'];
+                    m_possible = ['OO'];
+                    var OO  = 0;
+                    var tot = 0;
+
+                    for (let f_ch of f_possible)
+                    {
+                        for (let m_ch of m_possible)
+                        {
+                            for (let i = 0;i < 1;i++)
+                            {
+                                if (f_ch[i] == 'O' && m_ch[i] == 'O')
+                                {
+                                    OO = OO + 1;
+                                }
+                                if (f_ch[i] == 'O' && m_ch[i+1] == 'O')
+                                {
+                                    OO = OO + 1;
+                                }
+                                if (f_ch[i+1] == 'O' && m_ch[i] == 'O')
+                                {
+                                    OO = OO + 1;
+                                }
+                                if (f_ch[i+1] == 'O' && m_ch[i+1] == 'O')
+                                {
+                                    OO = OO + 1;
+                                }
+                            } 
+                        }
+                    }
+                    tot = OO;
+                    var A = 0;
+                    var B = 0;
+                    var A_B = 0;
+                    var O = 0;
+
+                    O = (OO/tot)*100;
+
+                    document.getElementById("AAAA").innerHTML = A;
+                    document.getElementById("BBBB").innerHTML = B;
+                    document.getElementById("ABAB").innerHTML = A_B;
+                    document.getElementById("OOOO").innerHTML = O;
+                }
+                else if ((father_type == "A" && mother_type == "B") || (father_type == "B" && mother_type == "A"))
+                {
+
+                    f_possible = ['AO','AA'];
+                    m_possible = ['BO','BB'];
+                    var AB  = 0;
+                    var AO  = 0;
+                    var BO  = 0;
+                    var OO  = 0;
+                    var tot = 0;
+
+                    for (let f_ch of f_possible)
+                    {
+                        for (let m_ch of m_possible)
+                        {
+                            for (let i = 0;i < 1;i++)
+                            {
+                                if (f_ch[i] == 'A' && m_ch[i] == 'B')
+                                {
+                                    AB = AB + 1;
+                                } // AB
+                                if (f_ch[i] == 'A' && m_ch[i+1] == 'O')
+                                {
+                                    AO = AO + 1;
+                                } // AO
+                                if (f_ch[i+1] == 'O' && m_ch[i] == 'B')
+                                {
+                                    BO = BO + 1;
+                                } // BO
+                                if (f_ch[i+1] == 'O' && m_ch[i+1] == 'O')
+                                {
+                                    OO = OO + 1;
+                                } // OO
+                                
+                                if (f_ch[i] == 'A' && m_ch[i] == 'B')
+                                {
+                                    AB = AB + 1;
+                                } // AB
+                                if (f_ch[i] == 'A' && m_ch[i+1] == 'B')
+                                {
+                                    AB = AB + 1;
+                                } // AB
+                                if (f_ch[i+1] == 'B' && m_ch[i] == 'O')
+                                {
+                                    BO = BO + 1;
+                                } // BO
+                                if (f_ch[i+1] == 'B' && m_ch[i+1] == 'O')
+                                {
+                                    BO = BO + 1;
+                                } // BO
+
+
+                                if (f_ch[i] == 'A' && m_ch[i] == 'B')
+                                {
+                                    AB = AB + 1;
+                                } // AB
+                                if (f_ch[i+1] == 'A' && m_ch[i] == 'B')
+                                {
+                                    AB = AB + 1;
+                                } // AB
+                                if (f_ch[i] == 'A' && m_ch[i+1] == 'O')
+                                {
+                                    AO = AO + 1;
+                                } // AO
+                                if (f_ch[i+1] == 'A' && m_ch[i+1] == 'O')
+                                {
+                                    AO = AO + 1;
+                                } // AO
+
+                                if (f_ch[i] == 'A' && m_ch[i] == 'B')
+                                {
+                                    AB = AB + 1;
+                                } // AB
+                                if (f_ch[i+1] == 'A' && m_ch[i] == 'B')
+                                {
+                                    AB = AB + 1;
+                                } // AB
+                                if (f_ch[i] == 'A' && m_ch[i+1] == 'B')
+                                {
+                                    AB = AB + 1;
+                                } // AB
+                                if (f_ch[i+1] == 'A' && m_ch[i+1] == 'B')
+                                {
+                                    AB = AB + 1;
+                                } // AB
+                                
+
+                                
+                            } 
+                        }
+                    }
+                    tot = 16;
+                    var A = (3/tot)*100;
+                    var B = (3/tot)*100;
+                    var A_B = (9/tot)*100;
+                    var O = (OO/tot)*100;
+
+                    document.getElementById("AAAA").innerHTML = A;
+                    document.getElementById("BBBB").innerHTML = B;
+                    document.getElementById("ABAB").innerHTML = A_B;
+                    document.getElementById("OOOO").innerHTML = O;
+                }
+                
+                else if ((father_type == "A" && mother_type == "O") || (father_type == "O" && mother_type == "A") || (father_type == "B" && mother_type == "O") || (father_type == "O" && mother_type == "B"))
+                {
+                    f_possible = ['AO','AA'];
+                    m_possible = ['OO'];
+                    var AO  = 0;
+                    var OO  = 0;
+                    var tot = 0;
+
+                    for (let f_ch of f_possible)
+                    {
+                        for (let m_ch of m_possible)
+                        {
+                            for (let i = 0;i < 1;i++)
+                            {
+                                if (f_ch[i] == 'A' && m_ch[i] == 'O')
+                                {
+                                    AO = AO + 1;
+                                }
+                                if (f_ch[i+1] == 'O' && m_ch[i+1] == 'O')
+                                {
+                                    OO = OO + 1;
+                                }
+                                if (f_ch[i+1] == 'O' && m_ch[i] == 'O')
+                                {
+                                    OO = OO + 1;
+                                }
+                                if (f_ch[i] == 'A' && m_ch[i+1] == 'O')
+                                {
+                                    AO = AO + 1;
+                                }
+                                if (f_ch[i+1] == 'A' && m_ch[i] == 'O')
+                                {
+                                    AO = AO + 1;
+                                }
+                                if (f_ch[i+1] == 'A' && m_ch[i+1] == 'O')
+                                {
+                                    AO = AO + 1;
+                                }
+                            } 
+                        }
+                    }
+                    
+                    tot = OO + AO;
+                    var A = 0;
+                    var B = 0;
+                    var A_B = 0;
+                    var O = 0;
+
+                    
+
+                    if ((father_type == "A" && mother_type == "O") || (father_type == "O" && mother_type == "A"))
+                    {
+                        A = (AO/tot)*100;
+                        O = (OO/tot)*100;
+                        document.getElementById("AAAA").innerHTML = A;
+                        document.getElementById("BBBB").innerHTML = B;
+                        document.getElementById("ABAB").innerHTML = A_B;
+                        document.getElementById("OOOO").innerHTML = O;
+
+                    }
+                    else
+                    {
+                        B = (AO/tot)*100;
+                        O = (OO/tot)*100;
+                        document.getElementById("AAAA").innerHTML = A;
+                        document.getElementById("BBBB").innerHTML = B;
+                        document.getElementById("ABAB").innerHTML = A_B;
+                        document.getElementById("OOOO").innerHTML = O;
+                    }
+
+                    
+
+                    
+                }
+                else if ((father_type == "A" && mother_type == "AB") || (father_type == "AB" && mother_type == "A") || (father_type == "B" && mother_type == "AB") || (father_type == "AB" && mother_type == "B"))
+                {
+                    f_possible = ['AO','AA'];
+                    m_possible = ['AB'];
+                    var AA  = 0;
+                    
+                    var AB  = 0;
+                    var AO  = 0;
+                    var BO  = 0;
+                    var tot = 0;
+
+                    for (let f_ch of f_possible)
+                    {
+                        for (let m_ch of m_possible)
+                        {
+                            for (let i = 0;i < 1;i++)
+                            {
+                                if (f_ch[i] == 'A' && m_ch[i] == 'A')
+                                {
+                                    AA = AA + 1;
+                                } // aa
+                                if (f_ch[i] == 'A' && m_ch[i+1] == 'B')
+                                {
+                                    AB = AB + 1;
+                                } // ab
+                                if (f_ch[i+1] == 'O' && m_ch[i] == 'A')
+                                {
+                                    AO = AO + 1;
+                                } // ao
+                                if (f_ch[i+1] == 'O' && m_ch[i+1] == 'B')
+                                {
+                                    BO = BO + 1;
+                                } // bo
+
+
+                                if (f_ch[i+1] == 'A' && m_ch[i] == 'A')
+                                {
+                                    AA = AA + 1;
+                                 } // aa
+                                if (f_ch[i] == 'A' && m_ch[i+1] == 'B')
+                                {
+                                    //AB = AB + 1;
+                                } // ab
+                                if (f_ch[i+1] == 'A' && m_ch[i] == 'A')
+                                {
+                                    //AO = AO + 1;
+                                } // 
+                                if (f_ch[i+1] == 'A' && m_ch[i+1] == 'B')
+                                {
+                                    AB  = AB + 1;
+                                } // ab
+                            } 
+                        }
+                    }
+                   
+                    tot = AA + AO + BO + AB;
+                    var A = 0;
+                    var B = 0;
+                    var A_B = 0;
+                    var O = 0;
+
+                    
+
+                    if ((father_type == "A" && mother_type == "AB") || (father_type == "AB" && mother_type == "A"))
+                    {
+                        A = ((AO+AA)/tot)*100;
+                        B = ((BO)/tot)*100;
+                        A_B = ((AB)/tot)*100;
+                        document.getElementById("AAAA").innerHTML = A;
+                        document.getElementById("BBBB").innerHTML = B;
+                        document.getElementById("ABAB").innerHTML = A_B;
+                        document.getElementById("OOOO").innerHTML = O;
+
+                    }
+                    else
+                    {
+                        B = ((AO+AA)/tot)*100;
+                        A = ((BO)/tot)*100;
+                        A_B = ((AB)/tot)*100;
+                        document.getElementById("AAAA").innerHTML = A;
+                        document.getElementById("BBBB").innerHTML = B;
+                        document.getElementById("ABAB").innerHTML = A_B;
+                        document.getElementById("OOOO").innerHTML = O;
+                    }
+                    
+                }
+                else
+                {
+
+                    f_possible = ['OO'];
+                    m_possible = ['AB'];
+
+                    var AO = 0;
+                    var BO = 0;
+                    for (let f_ch of f_possible)
+                    {
+                        for (let m_ch of m_possible)
+                        {
+                            for (let i = 0;i < 1;i++)
+                            {
+                                if(f_ch[i] == 'O' && m_ch[i] == 'A')
+                                {
+                                    AO = AO + 1;
+                                }
+                                if(f_ch[i+1] == 'O' && m_ch[i] == 'A')
+                                {
+                                    AO = AO + 1;
+                                }
+                                if(f_ch[i] == 'O' && m_ch[i+1] == 'B')
+                                {
+                                    BO = BO + 1;
+                                }
+                                if(f_ch[i+1] == 'O' && m_ch[i+1] == 'B')
+                                {
+                                    BO = BO + 1;
+                                }
+                            } 
+                        }
+                    }
+                   
+                    tot = AO + BO ;
+                    var A = 0;
+                    var B = 0;
+                    var A_B = 0;
+                    var O = 0;
+
+                    A = ((AO)/tot)*100;
+                    B = ((BO)/tot)*100;
+                    
+                    document.getElementById("AAAA").innerHTML = A;
+                    document.getElementById("BBBB").innerHTML = B;
+                    document.getElementById("ABAB").innerHTML = A_B;
+                    document.getElementById("OOOO").innerHTML = O;
+                }
+            }
+        </script>
+        <form>
+        <table  align="center">
+            <tr><th></th><th>Child Blood type calculator</th></tr>
+            <tr><th align="right">Mother Blood type:</th>
+                <th align="left">
+                    <select name="mother" id="mother">
+                        <option value="A" >A</option>
+                        <option value="B" >B</option>
+                        <option value="O" >O</option>
+                        <option value="AB">AB</option>
+                    </select>
+                </th>
+            </tr>
+            <tr><th align="right">Father Blood type:</th>
+                <th align="left">
+                    <select name="father" id="father">
+                        <option value="A">A</option>
+                        <option value="B">B</option>
+                        <option value="O">O</option>
+                        <option value="AB">AB</option>
+                    </select>
+                </th>  
+            </tr>
+            <tr><th align="right">Type A Chance:</th><th align="left"> <p><b   id="AAAA"></b>%</p></th></tr>
+            <tr><th align="right">Type B Chance:</th><th align="left"> <p><b   id="BBBB"></b>%</p></th></tr>
+            <tr><th align="right">Type AB Chance:</th><th align="left"><p><b   id="ABAB"></b>%</p></th></tr>
+            <tr><th align="right">Type O Chance:</th><th align="left"> <p><b   id="OOOO"></b>%</p></th></tr>
+            <tr><th></th>
+                <th>
+                    <input type="button" value="calculate" onclick="calculate_blood_type()">
+                    <input type="reset" value="Reset all" >
+                </th>
+            </tr>
+        </table>
+        </form>
+    </body>
+</html>

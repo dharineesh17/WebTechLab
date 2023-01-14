@@ -1,0 +1,54 @@
+<center>
+    <h1>Protein interaction Analyser</h1>
+    <hr>
+</center>
+
+
+<form method="post" action="ionic.php" enctype="multipart/form-data">
+
+    <center>
+        <label><b>Upload sequence file</b></label>
+        <input type="file" name="pseq">
+        
+    </center>
+
+    <br>
+
+    <table align="center" cellpadding = 5>
+
+        <tr>
+            <th colspan="2" align="center"><font color = red size = 4px>Types of interactions</font></th>
+        </tr>
+        <tr>
+            <td><input type="checkbox" name="c1[]" value="Hydro"></td>
+            <td>Hydrophobic interactions</td>
+        </tr>
+        <tr>
+            <td><input type="checkbox" name="c1[]" value="disul"></td>
+            <td>Disulphide bridges</td>
+        </tr>
+        <tr>
+            <td><input type="checkbox" name="c1[]" value="ionic"></td>
+            <td>Ionic interactions</td>
+        </tr>
+        <tr>
+            <td><input type="checkbox" name="c1[]" value="aroaro"></td>
+            <td>Aromatic-Aromati interactions</td>
+        </tr>
+        <tr>
+            <td><input type="checkbox" name="c1[]" value="arosul"></td>
+            <td>Aromati-Sulphur interactions</td>
+        </tr>
+        <tr>
+            <td><input type="checkbox" name="c1[]" value="catpi"></td>
+            <td>Cation-PI interactions</td>
+        </tr>
+        <tr>
+            <td colspan="2" align="center"><input type="submit" value="upload"></td>
+        </tr>
+    </table>
+    
+    
+</form>
+<hr>
+<center><h2>&copy; Department of Bioinformatics</h2></center>

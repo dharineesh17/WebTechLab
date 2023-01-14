@@ -1,0 +1,195 @@
+<h1>Child Blood type calculater</h1>
+<script>
+function  calculte_blood_type()
+ {
+ mb=document.getElementById("mother").value;
+ fb=document.getElementById("father").value;
+ alert(mb+" "+fb);
+var ac=0;
+var bc=0;
+var oc=0;
+var ab=0;
+   if(mb=='A'&&  fb=='A')
+   {
+
+	ac=(15/16)*100;
+	document.getElementById('AC').value=ac;
+	oc=(1/16)*100;
+	bc=0;
+	ab=0;
+	document.getElementById('OC').value=oc;
+	
+	document.getElementById('BC').value=bc;
+	
+	document.getElementById('AB').value=ab;
+   
+   }
+   if(mb=='A'&&  fb=='AB')
+   {
+	ac=(4/8)*100
+	document.getElementById('AC').value=ac;
+	bc=(1/8)*100;
+	document.getElementById('BC').value=bc;
+	oc=0;
+	document.getElementById('OC').value=oc;
+	ab=(3/8)*100;
+	document.getElementById('AB').value=ab;
+
+   }
+   if(mb=='A'&&  fb=='B')
+   {
+	ac=(3/16)*100;
+	document.getElementById('AC').value=ac;
+	bc=(3/16)*100;
+	document.getElementById('BC').value=bc;
+	oc=(1/16)*100;
+	document.getElementById('OC').value=oc;
+	ab=(9/16)*100;
+	document.getElementById('AB').value=ab;
+
+   }
+   if(mb=='A'&& fb=='O')
+   {
+	ac=(6/8)*100;
+	document.getElementById('AC').value=ac;
+	bc=0;
+	oc=(2/8)*100;
+	ab=0;
+	document.getElementById('OC').value=oc;
+	
+	document.getElementById('BC').value=bc;
+	
+	document.getElementById('AB').value=ab;
+
+   }
+   if(mb=='B'&&  fb=='A')
+   {
+	ac=(3/16)*100;
+	document.getElementById('AC').value=ac;
+	bc=(3/16)*100;
+	document.getElementById('BC').value=bc;
+	oc=(1/16)*100;
+	document.getElementById('OC').value=oc;
+	ab=(9/16)*100;
+	document.getElementById('AB').value=ab;
+
+   }
+   if(mb=='B'&& fb=='B')
+   {
+	ac=0;
+	document.getElementById('AC').value=ac;
+	bc=(15/16)*100;
+	oc=(9/16)*100;
+	ab=0;
+	document.getElementById('OC').value=oc;
+	
+	document.getElementById('BC').value=bc;
+	
+	document.getElementById('AB').value=ab;
+
+   }
+   if(mb=='B'&& fb=='AB')
+   {
+	bc=(4/8)*100;
+	ac=(1/8)*100;
+	document.getElementById('AC').value=ac;
+	oc=0;
+	ab=(3/8)*100;
+	document.getElementById('OC').value=oc;
+	
+	document.getElementById('BC').value=bc;
+	
+	document.getElementById('AB').value=ab;
+
+   }
+   if(mb=='B'&& fb=='O')
+   {
+	ac=0;
+	document.getElementById('AC').value=ac;
+	bc=(6/8)*100;
+	oc=(2/8)*100;
+	ab=0;
+	document.getElementById('OC').value=oc;
+	
+	document.getElementById('BC').value=bc;
+	
+	document.getElementById('AB').value=ab;
+
+   }
+    if(mb=='AB'&&  fb=='A')
+   {
+	ac=(4/8)*100;
+	document.getElementById('AC').value=ac;
+	bc=(1/8)*100;
+	document.getElementById('BC').value=bc;
+	oc=0;
+	document.getElementById('OC').value=oc;
+	ab=(3/8)*100;
+	document.getElementById('AB').value=ab;
+
+   }
+    if(mb=='AB'&& fb=='B')
+   {
+	bc=(4/8)*100;
+	ac=(1/8)*100;
+	document.getElementById('AC').value=ac;
+	oc=0;
+	ab=(3/8)*100;
+	document.getElementById('OC').value=oc;
+	
+	document.getElementById('BC').value=bc;
+	
+	document.getElementById('AB').value=ab;
+
+   }
+   
+    if(mb=='AB'&& fb=='AB')
+   {
+	ac=(1/4)*100;
+	document.getElementById('AC').value=ac;
+	bc=(1/4)*100;
+	oc=0;
+	ab=(2/4)*100;
+	document.getElementById('OC').value=oc;
+	
+	document.getElementById('BC').value=bc;
+	
+	document.getElementById('AB').value=ab;
+
+   }
+    if(mb=='AB'&& fb=='O')
+   {
+	ac=(2/4)*100;
+	document.getElementById('AC').value=ac;
+	bc=(2/4)*100;
+	oc=0;
+	ab=0;
+	document.getElementById('OC').value=oc;
+	
+	document.getElementById('BC').value=bc;
+	
+	document.getElementById('AB').value=ab;
+
+   }
+ }
+</script>
+
+
+Enter Mothers blood type<select id=mother>
+<option>A
+<option>B
+<option>AB
+<option>O
+</select>
+<br>
+Enter Fathers blood type<select id=father>
+<option>A
+<option>B
+<option>AB
+<option>O
+</select><br>
+Type A chance<input type=text id=AC><br>
+Type B chance<input type=text id=BC><br>
+Type AB chance<input type=text id=AB><br>
+Type O chance<input type=text id=OC><br>
+<input type=button value=Calculate onclick="calculte_blood_type();">
